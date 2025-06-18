@@ -4,20 +4,24 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.office.config.oo.edit.FileUser;
-import com.office.office.oo.OnlyOfficeAPI;
-import com.office.tools.FileUtil;
-import com.office.tools.SecurityUtils;
 import com.example.onlyoffice_demo.entity.OnFile;
 import com.example.onlyoffice_demo.entity.Result;
 import com.example.onlyoffice_demo.service.FileService;
 import com.example.onlyoffice_demo.service.OnFileService;
 import com.example.onlyoffice_demo.service.TempUser;
+import com.office.config.oo.edit.FileUser;
+import com.office.office.oo.OnlyOfficeAPI;
+import com.office.tools.FileUtil;
+import com.office.tools.SecurityUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,7 +29,10 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Scanner;
 
 /**
  * @BelongsProject: leaf-onlyoffice
@@ -55,7 +62,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public String filesView(Model model){
-        return "/index";
+        return "index";
     }
 
 
@@ -148,7 +155,7 @@ public class IndexController {
         String s = JSONUtil.toJsonStr(config);
         log.info("only office config:" + s);
         model.addAllAttributes(config);
-        return new ModelAndView("onlyOffice");
+        return new ModelAndView("onlyoffice");
     }
 
     /**

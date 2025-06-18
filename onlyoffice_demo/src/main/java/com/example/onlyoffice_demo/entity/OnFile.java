@@ -1,6 +1,5 @@
 package com.example.onlyoffice_demo.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -18,7 +17,7 @@ import lombok.Data;
 public class OnFile {
     @TableId
     private String fileId;
-    @TableField("`version`")
+    //@TableField("`version`")
     private String version;
     private String createdTime;
     private String userName;
