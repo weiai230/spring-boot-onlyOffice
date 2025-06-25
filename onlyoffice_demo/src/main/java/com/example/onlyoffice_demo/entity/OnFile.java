@@ -13,7 +13,7 @@ import lombok.Data;
  * @Version: 1.0
  */
 @Data
-@TableName("on_file")
+@TableName("only_file")
 public class OnFile {
     @TableId
     private String fileId;

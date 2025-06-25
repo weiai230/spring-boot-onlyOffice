@@ -1,4 +1,4 @@
-CREATE TABLE `on_file` (
+CREATE TABLE `only_file` (
   `file_id` varchar(255) NOT NULL,
   `version` varchar(255) DEFAULT NULL COMMENT '版本',
   `created_time` varchar(255) DEFAULT NULL COMMENT '时间',
