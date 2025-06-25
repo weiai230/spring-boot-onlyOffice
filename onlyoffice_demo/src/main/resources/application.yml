@@ -22,10 +22,14 @@ spring:
     static-locations: classpath:/static/**
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&useSSL=false
-    username: root
-    password: 123456
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://10.10.108.65:29265/iotdb?autoReconnect=true&characterEncoding=utf-8&
+    #    username: ascs
+    #    password: mqsW5u23Y8Sdqyx3YSH823IK
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://10.20.10.68:15432/altoss?currentSchema=altoss&stringtype=unspecified
+    username: altoss
+    password: alita@123
 
 
 mybatis-plus:
@@ -40,12 +44,12 @@ logging:
 
 office:
   type: oo   # wps / oo:onlyoffice
-  dowload-file: http://172.18.64.1:9090/download/  #http://ip:prot(域名)/xxxx/download/{id}，{id}在程序中动态拼接上的
-  localhost-address: http://172.18.64.1:9090  #本应用的地址
+  dowload-file: http://10.20.10.68:9091/download/  #http://ip:prot(域名)/xxxx/download/{id}，{id}在程序中动态拼接上的
+  localhost-address: http://10.20.10.68:9091 #本应用的地址
   hist-num:       #历史文件数量超出 则进行删除 有需要则填写
   max-size:       #单位 MB 限制单个文件打开时的大小 默认20MB
   timeout: 300000
   oo:
-    secret:  #onlyoffice服务 开启了jwt校验 填写
-    doc-service: http://172.18.64.1:9001  #onlyoffice服务的地址
+    secret: 5WfiWFDQWQucnb7o6Fms8ie76gdT35wo  #onlyoffice服务 开启了jwt校验 填写
+    doc-service: http://10.20.10.68:13050  #onlyoffice服务的地址
     call-back-url: /onlyOffice/save        # oo回调接口

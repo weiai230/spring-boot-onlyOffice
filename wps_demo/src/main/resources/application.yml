@@ -46,8 +46,8 @@ office:
   max-size:       #单位 MB 限制单个文件打开时的大小 默认20MB
   timeout: 300000
   wps:
-    ak: 13134645         #
-    sk: 46532749         #
+    ak: AK20250619GGXYTJ         #
+    sk: 21aed7e6b0dd86d68452f8fa25718f72         #
     domain-name: http://xxxxxxx/open   #wps中台地址  http://xxxxxxx/open
     secret-key:      #密钥
 
